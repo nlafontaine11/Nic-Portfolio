@@ -236,7 +236,7 @@ h5 {
 
 .about-social-list {
   display: flex;
-  justify-content: center; /* Center the social icons */
+  justify-content: left; /* Center the social icons */
   gap: 10px;
 }
 

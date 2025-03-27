@@ -60,7 +60,7 @@ iconData.forEach((item, index) => {
 });
 
 // Animation parameters
-let speed = 1.2; // Slightly faster than before
+let speed = 0.8; // Slightly faster than before
 
 // Animate the icons
 function animateIcons() {
@@ -91,8 +91,8 @@ animateIcons();
 // Adjust speed based on screen width for consistent experience
 function updateSpeed() {
     speed = window.innerWidth / 1200; // Divisor for medium speed
-    if (speed < 0.8) speed = 0.8; // Minimum speed
-    if (speed > 2) speed = 2; // Maximum speed
+    if (speed < 0.2) speed = 0.2; // Minimum speed
+    if (speed > 0.4) speed = 0.4; // Maximum speed
 }
 
 // Call once and add listener for window resize

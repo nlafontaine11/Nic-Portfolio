@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
   projectBoxes.forEach((box, index) => {
     originalState[index] = box.innerHTML;
     
-    // Add click event listener
+
     box.addEventListener('click', function(event) {
       // Prevent default anchor behavior
       event.preventDefault();
@@ -41,13 +41,11 @@ function expandProject(box, index) {
   const projectImg = box.querySelector('.project-img').src;
   const projectTitle = box.querySelector('.project-caption h5').textContent;
   
-  // Sample descriptions - replace with your actual descriptions
   const descriptions = {
     'Chess': 'A sophisticated chess game built with Next.js, featuring full implementation of standard chess rules, including checkmate detection, en passant, and promotion. Designed for an immersive double-player experience with future expansion potential',
     'Coming Soon - Fantasy Baskebtall App': 'An upcoming application that allows users to create and manage fantasy basketball teams. Features will include live score updates, player statistics, and competitive leagues with friends.'
   };
-  
-  // Project links - add your actual links here
+
   const projectLinks = {
     'Chess':'https://nic-chess.netlify.app/',  
     'Coming Soon - Fantasy Baskebtall App': ''
@@ -79,11 +77,11 @@ function expandProject(box, index) {
     </div>
   `;
   
-  // Replace content and add expanded class
+
   box.innerHTML = expandedHTML;
   box.classList.add('expanded');
   
-  // Add event listener to close button
+
   const closeBtn = box.querySelector('.close-btn');
   closeBtn.addEventListener('click', function(e) {
     e.stopPropagation();

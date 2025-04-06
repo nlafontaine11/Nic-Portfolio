@@ -9,11 +9,11 @@ const iconData = [
     { icon: '<i class="fab fa-git-alt"></i>', name: 'Git' },
     { icon: '<i class="fab fa-github"></i>', name: 'GitHub' },
     { icon: '<i class="fab fa-npm"></i>', name: 'NPM' },
-    { icon: '<i class="fab fa-react"></i>', name: 'Next.js' }, // Using React icon since Next.js doesn't have a FontAwesome icon
-    { icon: '<i class="fab fa-js"></i>', name: 'TypeScript' }, // Using JS icon since TS doesn't have a FontAwesome icon
-    { icon: '<i class="fab fa-css3-alt"></i>', name: 'Tailwind CSS' }, // Closest match
-    { icon: '<i class="fas fa-database"></i>', name: 'SQL' }, // Database icon for SQL
-    { icon: '<i class="fas fa-leaf"></i>', name: 'MongoDB' }, // Leaf icon (commonly used for MongoDB)
+    { icon: '<i class="fab fa-react"></i>', name: 'Next.js' }, 
+    { icon: '<i class="fab fa-js"></i>', name: 'TypeScript' }, 
+    { icon: '<i class="fab fa-css3-alt"></i>', name: 'Tailwind CSS' },
+    { icon: '<i class="fas fa-database"></i>', name: 'SQL' }, 
+    { icon: '<i class="fas fa-leaf"></i>', name: 'MongoDB' }, 
 ];
 const track = document.getElementById('icon-track');
 const iconElements = [];
@@ -60,7 +60,7 @@ iconData.forEach((item, index) => {
 });
 
 // Animation parameters
-let speed = 0.8; // Slightly faster than before
+let speed = 0.8; 
 
 // Animate the icons
 function animateIcons() {
@@ -85,7 +85,7 @@ function animateIcons() {
     animationId = requestAnimationFrame(animateIcons);
 }
 
-// Start animation
+
 animateIcons();
 
 // Adjust speed based on screen width for consistent experience

@@ -36,7 +36,6 @@ function handleProjectClick(box, index) {
     expandedProjectIndex = index;
   }
 }
-
 function expandProject(box, index) {
   // Get project data
   const projectImg = box.querySelector('.project-img').src;
@@ -48,8 +47,17 @@ function expandProject(box, index) {
     'Coming Soon - Fantasy Baskebtall App': 'An upcoming application that allows users to create and manage fantasy basketball teams. Features will include live score updates, player statistics, and competitive leagues with friends.'
   };
   
+  // Project links - add your actual links here
+  const projectLinks = {
+    'Chess':'https://nic-chess.netlify.app/',  
+    'Coming Soon - Fantasy Baskebtall App': ''
+  };
+  
   // Get the description or use a default one
   const description = descriptions[projectTitle] || 'More information about this project is coming soon.';
+  
+  // Get the link if available
+  const projectLink = projectLinks[projectTitle] || '';
   
   // Clone the original content
   const originalContent = box.innerHTML;
@@ -63,7 +71,10 @@ function expandProject(box, index) {
       <div class="project-description">
         <h3>${projectTitle}</h3>
         <p>${description}</p>
-        <button class="close-btn">Close</button>
+        <div class="project-buttons">
+          <button class="close-btn">Close</button>
+          ${projectLink ? `<a href="${projectLink}" target="_blank" class="demo-btn">Live Demo</a>` : ''}
+        </div>
       </div>
     </div>
   `;
@@ -78,6 +89,14 @@ function expandProject(box, index) {
     e.stopPropagation();
     closeProject(box, index);
   });
+  
+  // Prevent clicks on the links and buttons from bubbling up to the project box
+  const projectButtons = box.querySelector('.project-buttons');
+  if (projectButtons) {
+    projectButtons.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+  }
   
   // Prevent clicks on the image from bubbling up to the project box
   const imgContainer = box.querySelector('.project-image-container');

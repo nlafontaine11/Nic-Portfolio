@@ -303,19 +303,30 @@ h5 {
 }
 
 
-/* Project hover effects */
-.project-box:hover .project-mask {
+/* Hover effects ONLY when the card is NOT expanded */
+.project-box:not(.expanded):hover .project-mask {
   opacity: 1;
   visibility: visible;
 }
 
-.project-box:hover .project-mask .project-caption {
+.project-box:not(.expanded):hover .project-mask .project-caption {
   bottom: 30px;
   opacity: 1;
 }
 
-.project-box:hover .project-img {
+.project-box:not(.expanded):hover .project-img {
   transform: scale(1.1);
+}
+
+/* While expanded, make sure the overlay never interacts */
+.project-box.expanded .project-mask {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.project-box.expanded .project-img {
+  transform: none; /* no zoom */
 }
 
 
